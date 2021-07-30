@@ -1,0 +1,32 @@
+/*////////////////////////////// */
+/* Nav Component
+/* ///////////////////////////  */
+
+header {
+  text-align: center;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+header nav a {
+ color: green;
+ text-decoration: none;
+}
+
+header nav div { 
+  font-size: larger;
+  background-color: grey;
+  color: white;
+  width: 200px;
+  border-radius: 7px;
+  transition: background-color .2s, color .2s;
+  padding: 10px;
+}
+
+header nav div:hover {
+  background-color: black;
+  color: green;
+}
