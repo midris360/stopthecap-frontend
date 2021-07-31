@@ -30,3 +30,37 @@ header nav div:hover {
   background-color: black;
   color: green;
 }
+
+/*                        */
+/* Auth 
+/*                            */
+
+.auth {
+  padding: 50px;
+}
+
+.auth form input .form form input button {
+  background-color: grey;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+
+/*     Dashboard      */
+.dashboard {
+  text-align: center;
+
+}
+
+.dashboard .vinyl {
+  text-align: center;
+  width: 50px;
+  margin: 10px;
+  border: 3px solid grey;
+
+}

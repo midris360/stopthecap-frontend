@@ -1,4 +1,4 @@
-import React, {useContext, useReducer} from "react"
+import React, { useContext, useReducer } from "react"
 
 ///////////////////////
 /// INITIAL STATE
@@ -7,7 +7,17 @@ import React, {useContext, useReducer} from "react"
 const initialState = {
     url: "http://stopthecap.herokuapp.com",
     token: null,
-    username: null
+    username: null,
+    vinyls: null,
+    new: {
+        name: "",
+        title: "",
+    },
+    edit: {
+        id: 0,
+        name: "",
+        title: "",
+    },
 };
 
 ///////////////////
@@ -15,46 +25,28 @@ const initialState = {
 //////////////////
 // action = {type: "", payload: ---}
 const reducer = (state, action) => {
-        switch(action.type) {
-            case "signup":
-                fetch(state.url + "/users/", {
-                    method: "post",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(action.payload)
-                })
-                .then(response => response.json())
-                .then(user => {
-                    console.log(user)
-                    console.log(state)
-                    return {
-                        ...state,
-                        token: user.token,
-                        username: user.username,
-                        };
-                });
+    let newState;
+    switch(action.type) {
+        case "auth":
+            newState = { ...state, ...action.payload };
+            return newState;
+            break;
+        case "logout":
+            newState = {...state, token: null, username: null}
+            window.localStorage.removeItem("auth");
+            return newState;
+            break
+            case "getVinyls":
+                newstate = {...state, vinyls: action.payload}
+                return newState
                 break
-                case "login":
-                    fetch(state.url + "/login/", {
-                        method: "post",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(action.payload)
-                    })
-                    .then(response => response.json())
-                    .then(user => {
-                        return {
-                            ...state,
-                            token: user.token,
-                            username: user.username
-                        };
-                    });
-                    break
-                default:
-                    return state;
-                    break
+        case "select": 
+            newState= {...state, edit: action.payload}
+            return newState
+            break;
+        default:
+            return state;
+            break;
         }
 };
 
@@ -62,7 +54,7 @@ const reducer = (state, action) => {
 ///////////////////
 /// AppContext
 //////////////////
-const AppContext =React.createContext(null)
+const AppContext = React.createContext(null)
 
 
 ////////////////////////
@@ -71,7 +63,9 @@ const AppContext =React.createContext(null)
 export const AppState = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState)
 
-    return <AppContext.Provider value={{state, dispatch}}>{props.children}</AppContext.Provider>
+    return (
+    <AppContext.Provider value={{ state, dispatch }}>{props.children}</AppContext.Provider>
+    )
 };
 
 /////////////////////////
