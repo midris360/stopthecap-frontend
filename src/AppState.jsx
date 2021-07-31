@@ -1,5 +1,6 @@
 import React, { useContext, useReducer } from "react"
 
+
 ///////////////////////
 /// INITIAL STATE
 //////////////////////
@@ -32,17 +33,17 @@ const reducer = (state, action) => {
             return newState;
             break;
         case "logout":
-            newState = {...state, token: null, username: null}
+            newState = { ...state, token: null, username: null };
             window.localStorage.removeItem("auth");
             return newState;
-            break
-            case "getVinyls":
-                newstate = {...state, vinyls: action.payload}
-                return newState
-                break
+            break;
+        case "getVinyls":
+            newState = {...state, vinyls: action.payload };
+                return newState;
+                break;
         case "select": 
-            newState= {...state, edit: action.payload}
-            return newState
+            newState = { ...state, edit: action.payload };
+            return newState;
             break;
         default:
             return state;
@@ -54,7 +55,7 @@ const reducer = (state, action) => {
 ///////////////////
 /// AppContext
 //////////////////
-const AppContext = React.createContext(null)
+const AppContext = React.createContext(null);
 
 
 ////////////////////////
@@ -63,9 +64,11 @@ const AppContext = React.createContext(null)
 export const AppState = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState)
 
-    return (
-    <AppContext.Provider value={{ state, dispatch }}>{props.children}</AppContext.Provider>
-    )
+return (
+    <AppContext.Provider value={{ state, dispatch }}>
+        {props.children}
+    </AppContext.Provider>
+    );
 };
 
 /////////////////////////
@@ -73,5 +76,5 @@ export const AppState = (props) => {
 /////////////////////////
 
 export const useAppState = () => {
-    return React.useContext(AppContext)
-}
+    return React.useContext(AppContext); // I removed React before. before useContext..., not sure if it matters or changes anything.
+};

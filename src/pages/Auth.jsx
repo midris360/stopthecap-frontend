@@ -10,7 +10,7 @@ const Auth = (props) => {
     });
     const [userData, setUserData] = React.useState(null);
     const { state, dispatch } = useAppState();
-    console.log(state)
+    state;
 
     React.useEffect(() => {
         if (userData) {
@@ -60,23 +60,25 @@ const Auth = (props) => {
     return (
         <div className="auth">
             <form onSubmit={handleSubmit}>
-                <input 
+               <input 
                 type="text" 
                 name="username" 
                 value={formData.username} 
                 onChange={handleChange} 
+                placeholder="Enter username"
                 />
                 <input 
                 type="password" 
                 name="password" 
                 value={formData.password} 
-                onChange={handleChange} 
+                onChange={handleChange}
+                placeholder="Password"
                 />
                 <input type="submit" value={type} />
             </form>
         </div>
-            );
-        };
+    );
+};
 
 
 export default Auth;

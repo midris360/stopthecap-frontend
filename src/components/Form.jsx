@@ -1,12 +1,12 @@
 import React from "react";
-import {useAppState} from "../AppState.jsx";
+import { useAppState } from "../AppState.jsx";
 
 const Form = (props) => {
+        const { state, dispatch } = useAppState();
+        const { token } = state;
+        const action = props.match.params.action;
+        const [formData, setFormData] = React.useState(state[action]);
 
-        const { state, dispatch} = useAppState();
-        const {token} = state;
-        const action = props.match.params.action
-        const [formData, setFormData] = React.useState(state[action])
 
         const actions = {
             new: () => {
@@ -14,7 +14,7 @@ const Form = (props) => {
                     method: "post",
                     headers: {
                     "Content-Type": "application/json",
-                    Authorization: "bearer " + token
+                    Authorization: "bearer " + token,
                 },
                 body: JSON.stringify(formData),
             }).then((response) => response.json());
@@ -24,7 +24,7 @@ const Form = (props) => {
                 method: "put",
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: "bearer " + token
+                    Authorization: "bearer " + token,
                 },
                 body: JSON.stringify(formData),
             }).then((response) => response.json());
@@ -33,28 +33,26 @@ const Form = (props) => {
 
 
         const handleChange = (event) => { 
-            setFormData({...formData, [event.target.name]: event.target.value});
+            setFormData({...formData, [event.target.name]: event.target.value });
         };
     
         const handleSubmit = (event) => {
             event.preventDefault();
             actions[action]().then((data) => {
-               props.getVinyls()
-               props.history.push("/dashboard/")
+               props.getVinyls();
+               props.history.push("/Dashboard/");
             });
         };
 
     return (
         <div className="form">
-            <form onSubmit={handleChange}>
+            <form onSubmit={handleSubmit}>
                 <input type="text" name="name" value={formData.name} onChange={handleChange} />
                 <input type="text" name="title" value={formData.title} onChange={handleChange} />
                 <input type="submit" value={action} />
-
-
             </form>
         </div>
-    );
+        );
 };
 
 export default Form;
