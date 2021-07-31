@@ -5,11 +5,7 @@ import React, { useContext, useReducer } from "react"
 //////////////////////
 
 const initialState = {
-<<<<<<< HEAD
     url: "https://stopthecap-backend.herokuapp.com",
-=======
-    url: "https://stopthecap.herokuapp.com",
->>>>>>> 36ed3d7ebe02bb0083487f705b659dfcfe28c3d6
     token: null,
     username: null,
     vinyls: null,
