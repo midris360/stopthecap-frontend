@@ -1,0 +1,71 @@
+/*////////////////////////////// */
+/* Nav Component
+/* ///////////////////////////  */
+
+header {
+  text-align: center;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+header nav a {
+ color: green;
+ text-decoration: none;
+}
+
+header nav div { 
+  font-size: large;
+  background-color: rosybrown;
+  color: black;
+  width: 100px;
+  border-radius: 15px;
+  transition: background-color .2s, color .2s;
+  padding: 0px;
+}
+
+header nav div:hover {
+  background-color: black;
+  color: green;
+}
+
+/*                        */
+/* Auth 
+/*                            */
+
+.auth {
+  padding: 50px;
+}
+
+.form {
+  display: flexbox;
+  justify-content: space-around;
+}
+
+.auth form input .form form input button {
+  background-color: grey;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+
+/*     Dashboard      */
+.dashboard {
+  text-align: center;
+
+}
+
+.dashboard .vinyl {
+  text-align: center;
+  width: 50%;
+  margin: 5px auto;
+  border: 1px solid grey;
+
+}
