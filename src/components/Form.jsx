@@ -47,13 +47,8 @@ const Form = (props) => {
     return (
         <div className="form">
             <form onSubmit={handleSubmit}>
-<<<<<<< HEAD
                 <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="name" />
                 <input type="text" name="title" value={formData.title} onChange={handleChange} placeholder="title" />
-=======
-                <input type="text" name="name" value={formData.name} onChange={handleChange} />
-                <input type="text" name="title" value={formData.title} onChange={handleChange} />
->>>>>>> 50a49bdb4077b1179cae7d11dfff58bc96ccb879
                 <input type="submit" value={action} />
             </form>
         </div>

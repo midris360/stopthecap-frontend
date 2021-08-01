@@ -30,10 +30,7 @@
   },
   "dependencies": {
     "cross-env": "^7.0.2",
-<<<<<<< HEAD
     "materialize-css": "^1.0.0-rc.2",
-=======
->>>>>>> 50a49bdb4077b1179cae7d11dfff58bc96ccb879
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router": "^5.2.0",
