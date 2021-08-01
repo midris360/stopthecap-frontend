@@ -8,7 +8,11 @@ header {
 
 header nav {
   display: flex;
+<<<<<<< HEAD
   justify-content: center;
+=======
+  justify-content: space-around;
+>>>>>>> 50a49bdb4077b1179cae7d11dfff58bc96ccb879
 }
 
 header nav a {
@@ -17,6 +21,7 @@ header nav a {
 }
 
 header nav div { 
+<<<<<<< HEAD
   font-size: large;
   background-color: rosybrown;
   color: black;
@@ -24,6 +29,15 @@ header nav div {
   border-radius: 15px;
   transition: background-color .2s, color .2s;
   padding: 0px;
+=======
+  font-size: larger;
+  background-color: grey;
+  color: white;
+  width: 200px;
+  border-radius: 7px;
+  transition: background-color .2s, color .2s;
+  padding: 10px;
+>>>>>>> 50a49bdb4077b1179cae7d11dfff58bc96ccb879
 }
 
 header nav div:hover {
@@ -39,11 +53,14 @@ header nav div:hover {
   padding: 50px;
 }
 
+<<<<<<< HEAD
 .form {
   display: flexbox;
   justify-content: space-around;
 }
 
+=======
+>>>>>>> 50a49bdb4077b1179cae7d11dfff58bc96ccb879
 .auth form input .form form input button {
   background-color: grey;
   color: white;
@@ -64,8 +81,14 @@ header nav div:hover {
 
 .dashboard .vinyl {
   text-align: center;
+<<<<<<< HEAD
   width: 50%;
   margin: 5px auto;
   border: 1px solid grey;
+=======
+  width: 90%;
+  margin: 10px;
+  border: 3px solid grey;
+>>>>>>> 50a49bdb4077b1179cae7d11dfff58bc96ccb879
 
 }
