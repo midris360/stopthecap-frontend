@@ -9,6 +9,9 @@ const Nav = (props) => {
         <header>
             <h1>STOP The Cap | Vinyls Collection App</h1>
             <nav>
+                <div class="nav-wrapper">
+                    {/* <a href="#" class="brand=logo">Logo</a> */}
+                    {/* <ul id="nav-mobile" class="right hide-on-med-and-down"> */}
                 {!state.token ? (
                     <> 
                         <Link to="/">
@@ -29,8 +32,10 @@ const Nav = (props) => {
                         }}
                     >
                         Logout
-            </div> 
+            </div>
         ) : null}
+                {/* </ul> */}
+            </div>
         </nav>
     </header>
     );

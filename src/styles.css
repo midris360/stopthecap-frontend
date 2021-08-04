@@ -8,8 +8,16 @@ header {
 
 header nav {
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }
+
+.nav-wrapper {
+  display: flex;
+  margin-left: -155px;
+  margin-right: 0px;
+}
+
 
 header nav a {
  color: green;
@@ -67,5 +75,11 @@ header nav div:hover {
   width: 50%;
   margin: 5px auto;
   border: 1px solid grey;
+
+}
+
+ul {
+  display: flex;
+  justify-content: center;
 
 }

@@ -41,7 +41,7 @@ const Dashboard = (props) => {
                     <h4>{vinyl.title}</h4>
                     <button onClick={() => {
                     dispatch({ type: "select", payload: vinyl });
-                    props.history.push("/dashboard/edit")
+                    props.history.push("/Dashboard/edit")
                     }}
                     >
                     Edit Vinyl
@@ -61,9 +61,58 @@ const Dashboard = (props) => {
         </ul>
     </div>
    );
-};          
+
+};
+
+// const loaded = () => {
+//     return (
+// <div className="card sticky-action">
+
+// <div className="dashboard">
+//                 <h1>{username}'s Albums</h1>
+//                 <Link to="/dashboard/new">
+//                     <button>New Vinyl</button>
+//                 </Link>
+//                 <Route 
+//                     path="/dashboard/:action" 
+//                     render={(rp) => <Form {...rp} getVinyls={getVinyls} />}
+//                  />
+
+// <ul>
+// {state.vinyls.map((vinyl) => (
+//     <div className="card-action" key={vinyl.id}>
+   
+//                     <h2>{vinyl.name}</h2>
+//                     <h4>{vinyl.title}</h4>
+//                     <button onClick={() => {
+//                     dispatch({ type: "select", payload: vinyl });
+//                     props.history.push("/Dashboard/edit")
+//                     }}
+//                     >
+//                     Edit Vinyl
+//                     </button> 
+//                      <button onClick={() => {
+//                     fetch(url + "/vinyls/" + vinyl.id, {
+//                         method: "delete",
+//                         headers: {
+//                             Authorization: "bearer " + token,
+//                         },
+//                     }).then(() => getVinyls());
+//                     }}
+//                 >
+//                     Delete Vinyl</button>
+//                 </div>
+//             ))}
+//         </ul>
+//     </div>
 
 
+//     <div className="card-reveal"></div>
+//   </div>
+          
+//     );
+
+// };
 
     return vinyls ? loaded() : <h1>Loading...</h1>;
 };
